@@ -1,0 +1,8 @@
+{
+  "name": "proyecto-dyepi-tablet",
+  "app_id": "b047e6d8",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
