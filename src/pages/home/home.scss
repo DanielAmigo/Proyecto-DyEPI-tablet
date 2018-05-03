@@ -1,14 +1,31 @@
-.buscador {
-    width: 400px;
-    margin: 0px auto;
+ion-item:hover { 
+    background-color: #77d2e9 !important;
 }
 
-#logo {
-    float: left;
+ion-item.selected {
+    // Highlight style
+    background-color: map-get($colors, primary);;
 }
 
-#cabecera {
-    padding-top: 20px; 
-    padding-bottom: 20px;
-    
+
+/****** PERSONA LOGUEADA *******/
+.imageAvatar {
+    width: 100% !important;
+    height: 100% !important;
+}
+.custom-avatar {
+    height: 30vw;
+    width: 30vw;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bar.bar-profile {
+    background-color: #444;
+    height: 170px;
+}
+.hide-card {
+  -webkit-box-shadow: none!important;
 }
