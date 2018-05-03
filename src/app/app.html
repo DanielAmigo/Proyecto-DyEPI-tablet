@@ -1,1 +1,33 @@
-<ion-nav [root]="rootPage" #content></ion-nav>
+<ion-split-pane when="md" (ionChange)="actualizarValores()">
+  <ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <img id="logo" width="350" height="40" src="../../assets/imgs/primark.png" alt="Primark logo" />
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-card text-center class="hide-card">
+        <!-- *ngIf="clientService.user != null" -->
+        <ion-avatar item-left class="menu-avatar">
+          <img class="custom-avatar" src="https://image.flaticon.com/icons/svg/149/149071.svg">
+        </ion-avatar>
+        <h2>{{ email }}</h2>
+        <hr>
+      </ion-card>
+      <ion-list>
+        <ion-item class="menuButton" *ngFor="let track of pages; let i = index" (click)="open(i)" [ngClass]="(track.selected == true) ? 'selected' : ''">
+          {{ track.title }}
+        </ion-item>
+      </ion-list>
+      <ion-footer no-shadow>
+        <hr>
+        <ion-item class="menuButton" no-lines position="bottom" (click)="logout()">Logout</ion-item>
+        <!-- *ngIf="clientService.user != null" -->
+      </ion-footer>
+    </ion-content>
+  </ion-menu>
+
+  <!-- El contenido principal -->
+  <ion-nav [root]="rootPage" main #content></ion-nav>
+</ion-split-pane>

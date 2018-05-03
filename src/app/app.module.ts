@@ -5,16 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 
 /***** Providers *****/
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';       // La funcionalidad de Cordova para escanear
 import { ClientService } from '../services/client.services';
 import { ProductoService } from '../services/producto.services';
+import { WorkerService } from '../services/worker.services';
+import { SplitPane } from '../services/split-pane.services';
 
 /***** Firebase *****/
-import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
@@ -22,7 +23,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
   ],
   providers: [
     StatusBar,
@@ -42,6 +41,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     BarcodeScanner,   // NECESARIO PARA QUE FUNCIONE
     ProductoService,
     ClientService,
+    SplitPane,
+    WorkerService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

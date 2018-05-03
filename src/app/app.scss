@@ -14,3 +14,35 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.menuButton:hover { 
+    background-color: #77d2e9 !important;
+}
+
+.menuButton.item.selected {
+    // Highlight style
+    background-color: map-get($colors, primary);;
+}
+
+
+/****** PERSONA LOGUEADA *******/
+.imageAvatar {
+    width: 100px !important;
+    height: 100px !important;
+}
+.custom-avatar {
+    height: 30vw;
+    width: 30vw;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bar.bar-profile {
+    background-color: #444;
+    height: 170px;
+}
+.hide-card {
+  -webkit-box-shadow: none!important;
+}
