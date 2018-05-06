@@ -34,6 +34,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    
   ],
   providers: [
     StatusBar,

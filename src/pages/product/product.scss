@@ -1,0 +1,79 @@
+page-product {
+    .image-container{
+        background-size: cover;
+        min-width: 150px;
+        min-height: 200px;
+    }
+
+    .tipoProducto{
+        text-align: center;
+        font-size: 10px;
+        color: grey;
+        display: inline;
+    }
+
+    .thumbnail-photos{
+        max-height: 100px;
+        border: 1px;
+        border-color: aqua;
+    }
+
+    .sliderFotos{
+        height: 66%;
+    }
+
+    .imageSlider{
+        max-height: 350px;
+    }
+
+
+    .filters {
+
+        ion-col {
+            text-align: center;
+            font-size: 1.6rem;
+            line-height: 1.6rem;
+
+            ion-icon {
+                color: #ccc;
+            }
+
+            &.col-with-arrow {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        p {
+            margin: 0;
+            font-size: 1.4rem;
+            line-height: 1.5rem;
+        }
+        p.tallaName{
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+        .selected {
+            font-weight: 700;   // Negrita cuando se selecciona
+            background: rgb(240, 240, 240);
+        }
+    }
+
+    .cantidadSelector button{
+        margin: 0 auto;
+    }
+
+    .cantidadInput{
+       width: 25%;
+       text-align: center; 
+    }
+
+    .botonMenos{
+        margin: 0 0 0 auto;
+    }
+
+    .botonMas{
+        margin: 0 auto 0 0;
+    }
+}

@@ -14,7 +14,6 @@ import { ProductoService } from '../../services/producto.services';
 export class ProductsPage {
 
   productList: Producto[];
-  rootNavCtrl: NavController; // Para poder ir a una nueva vista, no dentro de las pestañas.
 
   constructor(
     public navCtrl: NavController,
@@ -23,7 +22,7 @@ export class ProductsPage {
     public productoService: ProductoService,
     public alertCtrl: AlertController
   ) {
-    console.log("Constructor Clients.ts");
+    console.log("Constructor Products.ts");
     if(!this.workerService.authenticated){      // Comprobamos que estemos logueados
       console.log("¡No estamos logueados!");
       this.navCtrl.setRoot("LoginPage");
@@ -32,6 +31,7 @@ export class ProductsPage {
       });
       alert2.present();
     }
+    
   }
 
   public ionViewWillEnter() {   // En vez de ngInit porque esto es cada vez que se pone visible!!
@@ -52,7 +52,7 @@ export class ProductsPage {
 
   openProducto(object: Producto){   // Al hacer click en un producto, te lleva a dicha vista.
     console.log("Pasamos a ProductoPage: "+object.referencia);
-    this.rootNavCtrl.push('ProductoPage', {producto: object.referencia});  // No se puede rootNavCtrl, sino no va.
+    this.navCtrl.push('ProductPage', {producto: object.referencia});  // No se puede rootNavCtrl, sino no va.
   }
 
 
