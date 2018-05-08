@@ -76,7 +76,7 @@ export class ProductPage {
 
             // Inicializamos los botones del gestor de tallas
             this.showLeftButton = false;
-            this.showRightButton = this.tallas.length > 2;
+            this.showRightButton = this.tallas.length > 4;
 
             Object.keys(x["colores"]).forEach(key => {    // Guardamos los colores bien
               let value3 = x["colores"][key];

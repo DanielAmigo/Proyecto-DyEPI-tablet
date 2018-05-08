@@ -6,14 +6,12 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 export class ProductoService {
 
     totalCost: number;
-   // private cart: Producto [] = [];
-
     private dbPath = '/Products/';
  
     productsRef: AngularFireList<Producto>;
 
     constructor(private db : AngularFireDatabase){
-        console.log("AAA");
+        console.log("constructor producto.services");
         this.productsRef = db.list(this.dbPath);
     }
   
@@ -21,29 +19,4 @@ export class ProductoService {
         return this.productsRef = this.db.list(this.dbPath);
     }
 
-/*
-    getTotalCost() {
-        this.totalCost = 0;
-        for (let index = 0; index < this.cart.length; index++) {
-            this.totalCost += Number(this.cart[index].seleccion[1]);
-        }
-        console.log("Precio modificado: "+this.totalCost);
-        return this.totalCost;
-    }
-*/  
-
-/*
-    getCart(){
-        return this.cart;
-    }
-
-    pushCart(producto){
-        return this.cart.push(producto);
-    }
-
-    deleteProductCart(index){
-        this.cart.splice(index, 1);
-        return this.cart;
-    }
-*/
 }

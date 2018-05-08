@@ -22,6 +22,8 @@ export class LoginPage {
     public workerService: WorkerService,
     public alertCtrl: AlertController
   ) {
+    this.user.email = "marta.ruiz@primark.com";       // QUITARLO PARA CUANDO ENTREGUEMOSSS
+    this.user.password = "123123";
   }
 
   ionViewDidLoad() {

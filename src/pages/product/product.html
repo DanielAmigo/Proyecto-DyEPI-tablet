@@ -3,7 +3,7 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Product</ion-title>
+      <ion-title>{{ producto?.name }}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -35,8 +35,8 @@
         <ion-icon *ngIf="showLeftButton" name="arrow-back"></ion-icon>
       </ion-col>
       <ion-col no-padding col-10>
-        <ion-slides (ionSlideDidChange)="slideChanged()" slidesPerView="2">
-          <ion-slide [class.selected]="tallaSelected === talla" (click)="seleccionandoTalla(talla)" *ngFor="let talla of tallas; let i = index">
+        <ion-slides (ionSlideDidChange)="slideChanged()" slidesPerView="4">
+          <ion-slide [class.selected]="tallaSelected === talla" *ngFor="let talla of tallas; let i = index">
             <p class="tallaName">Talla {{ tallas[i] }}</p>
             <p>Expuestas: {{ cantidadTienda[i] }}</p>
             <p>Almacén: {{ cantidadAlmacen[i] }}</p>

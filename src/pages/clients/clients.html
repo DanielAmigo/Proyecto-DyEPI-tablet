@@ -9,6 +9,54 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <div class="row">
+    <div col-6>
+      <h2>Peticiones de clientes</h2>
+      <ion-item *ngFor="let request of requestsList" class="product-item">
+        <ion-card class="cardProducto" (click)="openRequest(request)">
+          <div class="textoDentro">
+            <div class="textoPrecio"> {{ request?.email }} </div>
+            <div class="textoPrecio"> {{ request?.tipo }} </div>
+            <div class="textoPrecio"> {{ request?.date }} </div>
+            <div class="textoPrecio"> {{ request?.lugar }} </div>
+          </div>
+        </ion-card>
+      </ion-item>
+    </div>
 
+    <div col-6>
+      <h2>Petición actual</h2>
+      <ion-card class="cardProducto" *ngIf="carritoSelected && recien==false">
+        <div class="textoDentro">
+          <div class="textoPrecio">
+            <b>Usuario</b>: {{ requestSelected?.email }} </div>
+          <div class="textoPrecio">
+            <b>Tipo de petición</b>: {{ requestSelected?.tipo }} </div>
+          <div class="textoPrecio">
+            <b>Hora de solicitud</b>: {{ requestSelected?.date }} </div>
+          <div class="textoPrecio">
+            <b>Ubicación</b>: {{ requestSelected?.lugar }} </div>
+        </div>
+        <ion-list>
+          <br>
+          <h2>Carrito del cliente</h2>
+          <ion-item class="itemCarrito" *ngFor="let producto of carritoSelected; let i = index" tappable>
+            <ion-thumbnail item-start class="thumbnail-photos">
+              <img [src]="producto.foto">
+            </ion-thumbnail>
+            <h2>{{ producto.name }}</h2>
+            <p>Talla {{ producto.talla }}</p>
+            <p>Cantidad {{ producto.cantidad }}</p>
+            <p>Precio {{ producto.precio }}</p>
+            <input clear item-end type="checkbox" ng-model="producto.selected" checked="checked">
+          </ion-item>
+        </ion-list>
+        <button (click)="cancelar()">Cancelar asistencia</button>
+        <button item-end *ngIf="noCobrarButton==true" (click)="cobrar()">Cobrar</button>
+        <button item-end *ngIf="noCobrarButton==false" (click)="resuelta()">Asistencia resuelta</button>
+      </ion-card>
+      <ion-card class="cardProducto" *ngIf="!requestSelected">No tienes ninguna petición seleccionada</ion-card>
+    </div>
+  </div>
 </ion-content>

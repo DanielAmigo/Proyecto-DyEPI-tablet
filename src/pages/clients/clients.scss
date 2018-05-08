@@ -1,3 +1,20 @@
 page-clients {
+    input[type=checkbox]
+    {
+      /* Double-sized Checkboxes */
+      -ms-transform: scale(2); /* IE */
+      -moz-transform: scale(2); /* FF */
+      -webkit-transform: scale(2); /* Safari and Chrome */
+      -o-transform: scale(2); /* Opera */
+      padding: 10px;
+    }
 
+    .itemCarrito ion-thumbnail {
+        min-width: 5rem;    
+        min-height: 5rem;
+        img {
+            max-width: 5rem;    
+            min-width: 5rem;
+        }
+    }
 }
