@@ -9,7 +9,7 @@ import { WorkerService } from '../../services/worker.services';
   templateUrl: 'tienda.html',
 })
 export class TiendaPage {
-
+  picToView:string="../../assets/imgs/planta2.png";
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -26,5 +26,10 @@ export class TiendaPage {
       alert2.present();
     }
   }
+
+  changeView(numeroImagen){
+    console.log(numeroImagen);
+    this.picToView="../../assets/imgs/planta"+numeroImagen+".png";
+}
 
 }

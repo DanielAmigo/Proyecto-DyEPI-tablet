@@ -1,3 +1,24 @@
 page-tienda {
+    .mapa {
+        height: 570px;
+        width: 450px;
+    }
 
+    #selectorPlanta {
+        float: right;
+        width: 50px;
+    }
+
+    ion-col {
+        height: 40px;
+        border: 1px solid black;    
+    }
+
+    .numerosPlanta {
+        margin: 0px 50px;
+    }
+
+    img {
+        margin: -20px 80px;
+    }
 }

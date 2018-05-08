@@ -9,5 +9,34 @@
 
 
 <ion-content padding>
+  <img class="mapa" [src]="picToView"/>
+
+  <ion-grid id="selectorPlanta">
+    <ion-row>
+      <ion-col text-center (click)="changeView(4)">
+        <span class="numeroPlanta">4</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center (click)="changeView(3)">
+        3
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center (click)="changeView(2)">
+        2
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center (click)="changeView(1)">
+        1
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center (click)="changeView(0)">
+        0
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
