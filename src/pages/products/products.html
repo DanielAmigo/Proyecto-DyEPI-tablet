@@ -1,9 +1,9 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar class="navBarStyle">
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Products</ion-title>
+        <ion-title>Vista de productos</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -21,4 +21,10 @@
             </ion-col>
         </ion-row>
     </ion-grid>
+    
+    <ion-fab bottom right color="grey">
+            <button ion-fab color="grey" (click)="enDesarrollo()">
+              <ion-icon name="qr-scanner"></ion-icon>
+            </button>
+          </ion-fab>
 </ion-content>

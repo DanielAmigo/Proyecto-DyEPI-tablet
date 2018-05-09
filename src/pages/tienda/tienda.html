@@ -1,42 +1,21 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar class="navBarStyle">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>TiendaPage</ion-title>
+    <ion-title>Mapa de la tienda</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <img class="mapa" [src]="picToView"/>
-
-  <ion-grid id="selectorPlanta">
-    <ion-row>
-      <ion-col text-center (click)="changeView(4)" [ngStyle]="{'background-color': planta4}">
-        <span class="numeroPlanta">4</span>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center (click)="changeView(3)" [ngStyle]="{'background-color': planta3}">
-        3
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center (click)="changeView(2)" [ngStyle]="{'background-color': planta2}">
-        2
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center (click)="changeView(1)" [ngStyle]="{'background-color': planta1}">
-        1
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center (click)="changeView(0)" [ngStyle]="{'background-color': planta0}">
-        0
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-slides class="sliderFotos" pager zoom>
+    <ion-slide *ngFor="let planta of plantas">
+      <h2>{{ planta.name }}</h2>
+      <div class="swiper-zoom-container">
+        <img class="mapa" [src]="planta.url" />
+      </div>
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the AlmacenPage page.
@@ -15,11 +15,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AlmacenPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public picToView = "../../assets/imgs/mapaAlmacen.png";
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public alertCtrl: AlertController
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlmacenPage');
   }
 
+  enDesarrollo() {
+    let alert2 = this.alertCtrl.create({
+      title: "En desarrollo...",
+    });
+    alert2.present();
+  }
 }

@@ -1,13 +1,39 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar class="navBarStyle">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>TrabajadoresPage</ion-title>
+    <ion-title>Gestión de trabajadores</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <div class="row">
+    <div col-6>
+      <h2>Trabajadores</h2>
+      <p *ngIf="requestsList?.length == 0">No hay trabajadores actualmente</p>
+      <ion-item *ngFor="let worker of workersList" class="product-item">
+        <ion-card class="cardProducto" (click)="openWorker(worker)">
+          <div class="textoDentro">
+            <div class="textoPrecio"> {{ worker?.email }} </div>
+            <div class="textoPrecio"> {{ worker?.key }} </div>
+          </div>
+        </ion-card>
+      </ion-item>
+    </div>
 
+    <div col-6>
+      <h2>Trabajador seleccionado</h2>
+      <ion-card class="cardProducto" *ngIf="workerSelected">
+        <div class="textoDentro">
+          <div class="textoPrecio">
+            <b>Usuario</b>: {{ workerSelected?.email }} </div>
+          <div class="textoPrecio">
+            <b>Key</b>: {{ workerSelected?.key }} </div>
+        </div>
+      </ion-card>
+      <ion-card class="cardProducto" *ngIf="!workerSelected">No tienes ningún trabajador seleccionado</ion-card>
+    </div>
+  </div>
 </ion-content>

@@ -55,5 +55,11 @@ export class ProductsPage {
     this.navCtrl.push('ProductPage', {producto: object.referencia});  // No se puede rootNavCtrl, sino no va.
   }
 
+  enDesarrollo() {
+    let alert2 = this.alertCtrl.create({
+      title: "En desarrollo...",
+    });
+    alert2.present();
+  }
 
 }

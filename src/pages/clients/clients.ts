@@ -16,6 +16,7 @@ export class ClientsPage {
   public carritoSelected: Array<ProductoCarrito>;
   public noCobrarButton = false;
   public recien = false;
+  public selectedAll = false;
 
   constructor(
     public navCtrl: NavController,
@@ -55,6 +56,9 @@ export class ClientsPage {
     this.carritoSelected = [];
 
     if (this.requestSelected.tipo == "peticionPagoEnMano" || this.requestSelected.tipo == "peticionPagoRecoge") {
+      if(this.requestSelected.tipo == "peticionPagoEnMano") this.selectedAll = true;
+      else this.selectedAll = false;
+      
       this.noCobrarButton = true;
       this.workerService.getCarritoUsuario(this.requestSelected.key).snapshotChanges().subscribe(item => {
         item.forEach(element => {
@@ -136,6 +140,13 @@ export class ClientsPage {
           }
         }
       ]
+    });
+    alert2.present();
+  }
+
+  enDesarrollo() {
+    let alert2 = this.alertCtrl.create({
+      title: "En desarrollo...",
     });
     alert2.present();
   }

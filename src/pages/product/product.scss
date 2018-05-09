@@ -1,4 +1,8 @@
 page-product {
+    .navBarStyle{
+        height: 51.5px;
+    }
+
     .image-container{
         background-size: cover;
         min-width: 150px;
@@ -7,7 +11,7 @@ page-product {
 
     .tipoProducto{
         text-align: center;
-        font-size: 10px;
+        font-size: 14px;
         color: grey;
         display: inline;
     }
@@ -23,7 +27,7 @@ page-product {
     }
 
     .imageSlider{
-        max-height: 350px;
+        max-height: 500px;
     }
 
 

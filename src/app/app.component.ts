@@ -17,7 +17,7 @@ export class MyApp {
   pages: Array<{ title: string, component: string, selected: boolean }>;
   className: string = "";
   myself: Worker;
-  email: string = "HI";
+  email: string = "marta.ruiz@primark.com";
 
   constructor(
     public platform: Platform,
@@ -40,6 +40,7 @@ export class MyApp {
         { title: 'Trabajadores', component: "TrabajadoresPage", selected: false },
         { title: 'Estadísticas', component: "EstadisticasPage", selected: false },
       ];
+      this.pages[0].selected = true;
     });
   }
 

@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar class="navBarStyle">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>ClientsPage</ion-title>
+    <ion-title>Gestión de clientes</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -13,6 +13,7 @@
   <div class="row">
     <div col-6>
       <h2>Peticiones de clientes</h2>
+      <p *ngIf="requestsList?.length == 0">No hay peticiones actualmente</p>
       <ion-item *ngFor="let request of requestsList" class="product-item">
         <ion-card class="cardProducto" (click)="openRequest(request)">
           <div class="textoDentro">
@@ -38,7 +39,7 @@
           <div class="textoPrecio">
             <b>Ubicación</b>: {{ requestSelected?.lugar }} </div>
         </div>
-        <ion-list>
+        <ion-list *ngIf="carritoSelected?.length > 0">
           <br>
           <h2>Carrito del cliente</h2>
           <ion-item class="itemCarrito" *ngFor="let producto of carritoSelected; let i = index" tappable>
@@ -49,7 +50,8 @@
             <p>Talla {{ producto.talla }}</p>
             <p>Cantidad {{ producto.cantidad }}</p>
             <p>Precio {{ producto.precio }}</p>
-            <input clear item-end type="checkbox" ng-model="producto.selected" checked="checked">
+            <input clear item-end type="checkbox" ng-model="producto.selected" *ngIf="selectedAll" checked="checked">
+            <input clear item-end type="checkbox" ng-model="producto.selected" *ngIf="!selectedAll">
           </ion-item>
         </ion-list>
         <button (click)="cancelar()">Cancelar asistencia</button>
@@ -59,4 +61,10 @@
       <ion-card class="cardProducto" *ngIf="!requestSelected">No tienes ninguna petición seleccionada</ion-card>
     </div>
   </div>
+
+  <ion-fab bottom right color="grey">
+    <button ion-fab color="grey" (click)="enDesarrollo()">
+      <ion-icon name="qr-scanner"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

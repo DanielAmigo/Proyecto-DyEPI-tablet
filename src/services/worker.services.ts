@@ -16,6 +16,7 @@ export class WorkerService {
     private pathClientsCarrito2 = '/carrito/';
     workersRef: AngularFireList<Worker>;
     clientePeticionRef: AngularFireList<PeticionCliente>;
+    workerRef: AngularFireList<Worker>;
     user: User;
     myself: Worker;
     carritoRef: AngularFireList<ProductoCarrito>;
@@ -113,6 +114,13 @@ export class WorkerService {
 
     deleteRequestClient(keyUser: string){
         this.db.object(this.pathRequestsClients+keyUser).remove();
+    }
+
+
+    /*********************** REQUESTS *********************/
+    getWorkers() {
+        console.log("getWorkers en workerService");
+        return this.workerRef = this.db.list(this.pathWorkers);
     }
 
 }
